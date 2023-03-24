@@ -1,20 +1,28 @@
 <svelte:head>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Caveat&family=Hanken+Grotesk:wght@500;700;800&family=Open+Sans:wght@300&display=swap"
+		rel="stylesheet"
+	/>
 	<title>Frontend Mentor | Results summary component</title>
 </svelte:head>
 
 <h1>Frontend Mentor | Results Summary Component</h1>
 <main>
 	<section>
-		Your Result<br />
-		76 of 100<br />
-		Great<br />
-		You scored higher than 65% of the people who have taken these tests.<br />
-		Summary<br />
-		Reaction 80 / 100<br />
-		Memory 92 / 100<br />
-		Verbal 61 / 100<br />
-		Visual 72 / 100<br />
-		Continue<br />
+		<h2>Your Result</h2>
+		<p><span>76</span> of 100</p>
+		<span>Great</span>
+		<p>
+			You scored higher than 65% of the people who have taken these tests.<br />
+			Summary
+		</p>
+		<ul>
+			<li>Reaction 80 / 100</li>
+			<li>Memory 92 / 100</li>
+			<li>Verbal 61 / 100</li>
+			<li>Visual 72 / 100</li>
+		</ul>
+		<input type="button" value="Continue" />
 	</section>
 </main>
 
