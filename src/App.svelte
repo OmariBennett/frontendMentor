@@ -1,13 +1,5 @@
 <script>
-	// Starting point...
+	import ResultsSummary from './project/resultsSummary/index.svelte';
 </script>
 
-<main>
-	<h1>hello world</h1>
-</main>
-
-<style>
-	* {
-		box-sizing: border-box;
-	}
-</style>
+<ResultsSummary />
