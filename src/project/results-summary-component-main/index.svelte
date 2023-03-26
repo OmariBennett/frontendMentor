@@ -8,15 +8,18 @@
 		Frontend Mentor <span>&#124;</span> Results Summary Component
 	</h1>
 	<main>
-		<section class="result | align-center grid">
-			<div class="summary">
+		<section class="result | text-align-center ">
+			<div class="summary | grid align-center" data-gap="large">
 				<h2 class="heading-1">Your Result</h2>
 				<p><span>76</span> of 100</p>
-				<span>Great</span>
-				<p>
-					You scored higher than 65% of the people who have taken these tests.
-				</p>
+				<div>
+					<p>Great</p>
+					<p>
+						You scored higher than 65% of the people who have taken these tests.
+					</p>
+				</div>
 			</div>
+
 			<div class="detail">
 				<p class="heading-1">Summary</p>
 				<ul>
@@ -135,20 +138,39 @@
 	/***************************************
 	 * Component
 	 ****************************************/
+
+	.result span {
+		color: var(--neutral-color-100);
+		font-size: 3rem;
+		display: block;
+	}
 	.summary {
 		color: hsl(var(--neutral-hsl-color-200) / 0.7);
 		background-image: linear-gradient(var(--gradient-1));
 		padding: 2rem;
 		border-radius: 0 0 2rem 2rem;
 	}
+	.summary h2 + p:first-of-type {
+		color: hsl(var(--neutral-hsl-color-200) / 0.6);
+		background-color: deeppink;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		width: 10rem;
+	}
 	/***************************************
 	 * Utility
 	 ****************************************/
-	.align-center {
+	.text-align-center {
 		text-align: center;
 	}
 	.grid {
 		display: grid;
+	}
+	.align-center {
+		place-items: center;
+	}
+	[data-gap='large'] {
+		gap: 2rem; /* fix the amount */
 	}
 	/***************************************
 	 * Block
@@ -164,13 +186,8 @@
 	/***************************************
 	 * Exception
 	 ****************************************/
-
-	/* 
-	.result span {
-		display: block;
-	} */
 	/***************************************
-	 * OTHER
+	 ** OTHER
 	 ****************************************/
 	h1,
 	.detail,
