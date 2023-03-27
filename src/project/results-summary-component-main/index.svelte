@@ -148,7 +148,7 @@
 		display: block;
 	}
 	.summary {
-		color: hsl(var(--neutral-hsl-color-200) / 0.8);
+		color: hsl(var(--neutral-hsl-color-200) / 0.7);
 		background-image: linear-gradient(var(--gradient-1));
 		padding: 2rem;
 		border-radius: 0 0 2rem 2rem;
@@ -168,8 +168,9 @@
 		z-index: -1;
 		transform: translate(-50%, -10%);
 	}
-	.summary:has(.heading-2) {
-		background-color: deeppink;
+	.summary .heading-2 {
+		color: var(--neutral-color-100);
+		padding-block: 0.5rem;
 	}
 	/***************************************
 	 * Utility
@@ -199,10 +200,10 @@
 		font-weight: var(--bold);
 	}
 	.heading-1 {
-		font-size: 1.3rem;
+		font-size: 1.8rem;
 	}
 	.heading-2 {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		font-weight: var(--semi-bold);
 	}
 	/***************************************
