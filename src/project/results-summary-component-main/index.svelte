@@ -9,11 +9,11 @@
 	</h1>
 	<main>
 		<section class="result | text-align-center ">
-			<div class="summary | grid align-center" data-gap="large">
+			<div class="summary | grid gap align-center">
 				<h2 class="heading-1">Your Result</h2>
 				<p><span>76</span> of 100</p>
 				<div>
-					<p>Great</p>
+					<p class="heading-2">Great</p>
 					<p>
 						You scored higher than 65% of the people who have taken these tests.
 					</p>
@@ -115,16 +115,18 @@
 	}
 	* {
 		font: inherit;
-		outline: 1px solid indigo;
+		/* outline: 1px solid indigo; */
 		/* background-color: hsl(275 100% 25% / 0.1); */
 	}
 	:global(html, body, #app),
 	main {
 		min-height: 100vh;
 	}
+	/* spacing = .16rem */
 	:global(body) {
 		letter-spacing: 1.1px;
-		line-height: 1.6;
+		line-height: 1.3;
+		letter-spacing: 0.016rem;
 		font-family: 'Hanken Grotesk';
 		font-size: 1.125rem; /* - Font size (paragraphs): 18px */
 		font-weight: var(--regular);
@@ -142,20 +144,32 @@
 	.result span {
 		color: var(--neutral-color-100);
 		font-size: 3rem;
+		line-height: 1.5;
 		display: block;
 	}
 	.summary {
-		color: hsl(var(--neutral-hsl-color-200) / 0.7);
+		color: hsl(var(--neutral-hsl-color-200) / 0.8);
 		background-image: linear-gradient(var(--gradient-1));
 		padding: 2rem;
 		border-radius: 0 0 2rem 2rem;
 	}
 	.summary h2 + p:first-of-type {
 		color: hsl(var(--neutral-hsl-color-200) / 0.6);
-		background-color: deeppink;
-		aspect-ratio: 1/1;
+		position: relative;
+		isolation: isolate;
+	}
+	.summary h2 + p:first-of-type::before {
+		background-image: linear-gradient(var(--gradient-2));
+		aspect-ratio: 1;
 		border-radius: 50%;
-		width: 10rem;
+		width: 8rem;
+		position: absolute;
+		content: '';
+		z-index: -1;
+		transform: translate(-50%, -10%);
+	}
+	.summary:has(.heading-2) {
+		background-color: deeppink;
 	}
 	/***************************************
 	 * Utility
@@ -169,8 +183,12 @@
 	.align-center {
 		place-items: center;
 	}
-	[data-gap='large'] {
-		gap: 2rem; /* fix the amount */
+	/*[data-gap='large'] {
+		gap: 3rem; /* fix the amount 
+	}
+	*/
+	.gap {
+		gap: 2rem;
 	}
 	/***************************************
 	 * Block
@@ -182,6 +200,10 @@
 	}
 	.heading-1 {
 		font-size: 1.3rem;
+	}
+	.heading-2 {
+		font-size: 1.3rem;
+		font-weight: var(--semi-bold);
 	}
 	/***************************************
 	 * Exception
